@@ -69,18 +69,21 @@ const Projects = () => {
                       href={project.previewLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 text-center py-2 bg-purple-600 text-white text-sm rounded-lg font-bold hover:bg-purple-700 transition-all"
+                      className="group relative flex-1 text-center py-2 rounded-lg font-bold text-sm overflow-hidden"
                     >
-                      Live
+                      <span className="absolute inset-0 bg-purple-600 group-hover:bg-transparent transition-all"></span>
+                      <span className="absolute inset-0 border border-purple-600 scale-0 group-hover:scale-100 rounded-lg transition-transform duration-300"></span>
+                      <span className="relative text-white group-hover:text-purple-400 transition-colors">Live</span>
                     </a>
                   )}
                   <a
                     href={project.sourceCodeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center py-2 border border-neutral-700 text-white text-sm rounded-lg font-bold hover:bg-neutral-800 transition-all"
+                    className="group relative flex-1 text-center py-2 rounded-lg font-bold text-sm overflow-hidden border border-neutral-700"
                   >
-                    Code
+                    <span className="absolute inset-0 bg-transparent group-hover:bg-white transition-all scale-x-0 group-hover:scale-x-100 origin-left"></span>
+                    <span className="relative text-white group-hover:text-black transition-colors">Code</span>
                   </a>
                 </div>
               </div>
@@ -98,10 +101,13 @@ const Projects = () => {
           href="https://github.com/aruppatra04"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-purple-500 text-purple-500 rounded-full font-bold text-sm hover:bg-purple-500 hover:text-white transition-all duration-300"
+          className="group relative flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm overflow-hidden"
         >
-          Explore More Projects
-          <span className="group-hover:translate-x-1 transition-transform">→</span>
+          <span className="absolute inset-0 border-2 border-purple-500 rounded-full group-hover:bg-purple-500 transition-all duration-300"></span>
+          <span className="relative text-purple-500 group-hover:text-white transition-colors flex items-center gap-2">
+            Explore More Projects
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </span>
         </a>
       </motion.div>
     </div>
