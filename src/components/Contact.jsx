@@ -8,24 +8,24 @@ const Contact = () => {
   const [error, setError] = useState(false);
 
   const sendEmail = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  // Automatically add current time to the hidden input named "time"
-  const now = new Date().toLocaleString();
-  const timeInput = form.current.querySelector('input[name="time"]');
-  if (timeInput) {
-    timeInput.value = now;
-  }
+    // Automatically add current time to the hidden input named "time"
+    const now = new Date().toLocaleString();
+    const timeInput = form.current.querySelector('input[name="time"]');
+    if (timeInput) {
+      timeInput.value = now;
+    }
 
-  emailjs
-    .sendForm(
-      import.meta.env.VITE_SERVICE_ID,    // Replace with your EmailJS service ID
-      import.meta.env.VITE_TEMPLATE_ID,   // Replace with your EmailJS template ID
-      form.current,
-      import.meta.env.VITE_PUBLIC_KEY    // Replace with your EmailJS public key
-    )
-    .then(
-      (result) => {
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,    // Replace with your EmailJS service ID
+        import.meta.env.VITE_TEMPLATE_ID,   // Replace with your EmailJS template ID
+        form.current,
+        import.meta.env.VITE_PUBLIC_KEY    // Replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
           console.log(result.text);
           setIsSent(true);
           setError(false);
@@ -51,11 +51,10 @@ const Contact = () => {
 
   return (
     <div className="my-20 px-4 max-w-2xl mx-auto">
-      <motion.h2 
+      <motion.h2
         id="contact"
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 1 }} 
+        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 1, y: 0 }}
         className="text-4xl text-center mb-10"
       >
         Contact <span className="text-neutral-500 font-bold"> Me</span>
@@ -74,7 +73,7 @@ const Contact = () => {
         <motion.input
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
-          transition={{ duration: 1.2}}
+          transition={{ duration: 1.2 }}
           type="email"
           name="email"
           placeholder="Your Email"

@@ -3,79 +3,101 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <motion.h1 
-        id="projects"
+    <div id="projects" className="border-b border-neutral-900 pb-20">
+      <motion.h1
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -50 }}
         transition={{ duration: 1 }}
-        className="my-20 text-center px-10 text-4xl font-bold"
+        className="my-20 text-center text-4xl font-bold"
       >
-        Projects
+        Featured Projects
       </motion.h1>
-      <div>
-        {PROJECTS.map((project, index) => {
-          return (
-            <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-              <motion.div 
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: -100 }}
-                transition={{ duration: 1 }} 
-                className="w-full lg:w-1/4"
-              >
-                <img
-                  src={project.image}
-                  width={200}
-                  height={200}
-                  alt={project.title}
-                  className="mb-6 rounded"
-                />
-              </motion.div>
-              <motion.div 
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: 100 }}
-                transition={{ duration: 1 }} 
-                className="w-full max-w-xl lg:w-3/4"
-              >
-                <h6 className="mb-2 font-semibold">{project.title}</h6>
-                <p className="mb-4 text-neutral-400">{project.description}</p>
-                <div className="mb-4">
-                  {project.technologies.map((tech, index) => (
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
+        {PROJECTS.slice(0, 3).map((project, index) => (
+          <motion.div
+            key={index}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
+            className="group relative bg-neutral-900/40 rounded-3xl border border-neutral-800 overflow-hidden hover:border-purple-500/50 transition-all flex flex-col h-full"
+          >
+            {/* Project Image Container with Fixed Aspect Ratio */}
+            <div className="relative aspect-video overflow-hidden border-b border-neutral-800">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-neutral-950/40 group-hover:bg-transparent transition-colors duration-300"></div>
+            </div>
+
+            {/* Content Container */}
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                {project.title}
+              </h3>
+
+              <p className="text-neutral-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                {project.description}
+              </p>
+
+              <div className="mt-auto">
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.slice(0, 3).map((tech, techIdx) => (
                     <span
-                      key={index}
-                      className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800"
+                      key={techIdx}
+                      className="px-2 py-1 bg-neutral-800 text-purple-300 text-[10px] rounded-md border border-neutral-700 uppercase font-bold tracking-wider"
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 3 && (
+                    <span className="text-[10px] text-neutral-500 pt-1">+{project.technologies.length - 3} more</span>
+                  )}
                 </div>
-                <div className="space-x-4">
+
+                <div className="flex gap-3">
                   {project.previewLink && (
                     <a
                       href={project.previewLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block rounded bg-purple-800 px-4 py-2 text-sm font-medium text-white hover:bg-purple-700"
+                      className="flex-1 text-center py-2 bg-purple-600 text-white text-sm rounded-lg font-bold hover:bg-purple-700 transition-all"
                     >
-                      Preview
+                      Live
                     </a>
                   )}
-                  {project.sourceCodeLink && (
-                    <a
-                      href={project.sourceCodeLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block rounded border border-purple-800 px-4 py-2 text-sm font-medium text-purple-800 hover:bg-purple-900 hover:text-white"
-                    >
-                      Source Code
-                    </a>
-                  )}
+                  <a
+                    href={project.sourceCodeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center py-2 border border-neutral-700 text-white text-sm rounded-lg font-bold hover:bg-neutral-800 transition-all"
+                  >
+                    Code
+                  </a>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          );
-        })}
+          </motion.div>
+        ))}
       </div>
+
+      <motion.div
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        className="mt-16 flex justify-center"
+      >
+        <a
+          href="https://github.com/aruppatra04"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-purple-500 text-purple-500 rounded-full font-bold text-sm hover:bg-purple-500 hover:text-white transition-all duration-300"
+        >
+          Explore More Projects
+          <span className="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </motion.div>
     </div>
   );
 };

@@ -8,90 +8,48 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-transparent text-white py-10">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-10">
-        {/* Left Side */}
-        <div className="space-y-4 md:w-1/3">
-          <h2 className="text-2xl font-semibold">Arup Patra</h2>
-          <p>Kolkata, WB, India</p>
-          <div className="flex space-x-4 mt-2">
-            <a
-              href="https://linkedin.com/in/aruppatra"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-purple-500"
-            >
-              <FaLinkedin size={20} />
-            </a>
-            <a
-              href="https://github.com/aruppatra04"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-purple-500"
-            >
-              <FaGithub size={20} />
-            </a>
-            <a
-              href="https://instagram.com/arup.patra04"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-purple-500"
-            >
-              <FaInstagram size={20} />
-            </a>
-            <a
-              href="https://x.com/arup_patra04"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-purple-500"
-            >
-              <FaXTwitter size={20} />
-            </a>
-            <a
-              href="https://www.facebook.com/share/1Bh6CYrWsA/?mibextid=wwXIfr.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-purple-500"
-            >
-              <FaFacebook size={20} />
-            </a>
+    <footer className="w-full bg-transparent text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-6 border-t border-neutral-900 pt-16">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-10">
+          {/* Left Side */}
+          <div className="space-y-4 text-center md:text-left">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              Arup Patra
+            </h2>
+            <p className="text-neutral-500 font-medium">Developing with passion, solving with logic.</p>
+            <div className="flex justify-center md:justify-start space-x-6 mt-6">
+              {[
+                { icon: FaLinkedin, href: "https://linkedin.com/in/aruppatra" },
+                { icon: FaGithub, href: "https://github.com/aruppatra04" },
+                { icon: FaInstagram, href: "https://instagram.com/arup.patra04" },
+                { icon: FaXTwitter, href: "https://x.com/arup_patra04" },
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-400 hover:text-white transition-all transform hover:scale-125"
+                >
+                  <social.icon size={24} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Side - Simplified Links */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-neutral-400">
+            <a href="#home" className="hover:text-purple-400 transition-colors">Home</a>
+            <a href="#technologies" className="hover:text-purple-400 transition-colors">Skills</a>
+            <a href="#projects" className="hover:text-purple-400 transition-colors">Projects</a>
+            <a href="#experience" className="hover:text-purple-400 transition-colors">Experience</a>
+            <a href="#contact" className="hover:text-purple-400 transition-colors">Contact</a>
           </div>
         </div>
 
-        {/* Right Side - Quick Links */}
-        <div className="md:w-2/3">
-          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-2">
-            <a href="#home" className="hover:text-purple-500">
-              Home
-            </a>
-            <a href="#coding" className="hover:text-purple-500">
-              Coding Journey
-            </a>
-            <a href="#education" className="hover:text-purple-500">
-              Education
-            </a>
-            <a href="#about" className="hover:text-purple-500">
-              About
-            </a>
-            <a href="#experience" className="hover:text-purple-500">
-              Experience
-            </a>
-            <a href="#contact" className="hover:text-purple-500">
-              Contact
-            </a>
-            <a href="#technologies" className="hover:text-purple-500">
-              Technologies
-            </a>
-            <a href="#projects" className="hover:text-purple-500">
-              Projects
-            </a>
-          </div>
+        <div className="text-center text-xs mt-20 text-neutral-600 tracking-widest uppercase">
+          © {new Date().getFullYear()} • Handcrafted by Arup Patra
         </div>
-      </div>
-
-      <div className="text-center text-sm mt-10 text-neutral-500">
-        © {new Date().getFullYear()} Arup Patra. All rights reserved.
       </div>
     </footer>
   );

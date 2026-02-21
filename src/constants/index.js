@@ -23,19 +23,12 @@ export const ABOUT_TEXT2 = `On the development side, I’m a full-stack web deve
 
 export const EXPERIENCES = [
   {
-    year: "May 2025 - Present",
-    role: "Web Developer Intern",
-    company: "CodClause",
-    description: `Developing a full-stack video streaming application using Node.js, Express.js, and MongoDB. Implemented video upload, storage, and playback features using Multer, GridFS, and video streaming APIs. Built an intuitive user interface with React.js and Tailwind CSS. Enabled secure user authentication with JWT and managed protected routes. Focused on optimizing video delivery, handling large files efficiently, and ensuring smooth playback.`,
+    year: "Jan 2026 - Present",
+    role: "SDE Intern",
+    company: "HashedIn by Deloitte",
+    description: `Working on a full-stack video streaming application using Node.js, Express.js, and MongoDB. Implemented video upload, storage, and playback features using Multer, GridFS, and video streaming APIs. Built an intuitive user interface with React.js and Tailwind CSS. Enabled secure user authentication with JWT and managed protected routes. Focused on optimizing video delivery, handling large files efficiently, and ensuring smooth playback.`,
     technologies: ["Javascript", "React.js", "Express.js", "MongoDB", "GridFS", "Tailwind"],
-  },
-  {
-    year: "Apr 2025 - May 2025",
-    role: "Web Developer Intern",
-    company: "CodSoft",
-    description: `Designed and developed user blogging interfaces for web applications using React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDb", "Tailwind"],
-  },
+  }
 ];
 
 export const PROJECTS = [
@@ -83,7 +76,7 @@ export const EDUCATIONS = [
     year: "2022 - 2026",
     degree: "B.Tech in Computer Science and System Engineering",
     institution: "KIIT University",
-    logo: kiit, 
+    logo: kiit,
     perc: "CGPA : 8.38",
     description: "Studying Data Structure and Algorithm, Full-stack development, ML, and Object Oriented programing.",
     subjects: ["DSA", "Web Dev", "DBMS", "OS", "CN"],
@@ -115,8 +108,8 @@ export const CODING_PLATFORMS = [
     maxRating: "1550+",
     totalSolved: "300+",
     achievements: [
-      "Among the top 34.9% of 89383 users.",
-      "Weekly Contest 445 : Rank 4514 out of 30K participants.",
+      // "Among the top 34.9% of 89383 users.",
+      // "Weekly Contest 445 : Rank 4514 out of 30K participants.",
     ],
     profileLink: "https://leetcode.com/u/arup04",
   },
@@ -126,7 +119,7 @@ export const CODING_PLATFORMS = [
     maxRating: "655 (Newbie)",
     totalSolved: "100+",
     achievements: [
-    // upcoming
+      // upcoming
     ],
     profileLink: "https://codeforces.com/profile/arup-04",
   },
@@ -136,8 +129,8 @@ export const CODING_PLATFORMS = [
     maxRating: "1356",
     totalSolved: "100+",
     achievements: [
-      "1⭐ Coder",
-      "STARTERS 159 : Rank 3006 out of 28K participants."
+      // "1⭐ Coder",
+      // "STARTERS 159 : Rank 3006 out of 28K participants."
     ],
     profileLink: "https://www.codechef.com/users/arup04",
   },
@@ -147,9 +140,9 @@ export const CODING_PLATFORMS = [
     maxRating: "1700+",
     totalSolved: "100+",
     achievements: [
-      "3⭐ Coder",
-      "Global Rank : 6809",
-      "Among the top 19.2% of 35471 users."
+      // "3⭐ Coder",
+      // "Global Rank : 6809",
+      // "Among the top 19.2% of 35471 users."
     ],
     profileLink: "https://www.geeksforgeeks.org/user/iarup04",
   },
@@ -159,8 +152,8 @@ export const CODING_PLATFORMS = [
     maxRating: "1500+",
     totalSolved: "300+",
     achievements: [
-      "Weekly Contest 177 : Rank 87.",
-      "Top Performer in IITM Pravartak Advanced DSA Scholarship Test."
+      // "Weekly Contest 177 : Rank 87.",
+      // "Top Performer in IITM Pravartak Advanced DSA Scholarship Test."
     ],
     profileLink: "https://www.naukri.com/code360/profile/arup_cn_04",
   },
@@ -170,7 +163,7 @@ export const CODING_PLATFORMS = [
     maxRating: "93 - 11Kyu",
     totalSolved: "-",
     achievements: [
-      "AtCoder Beginner Contest 394 : Rank 4842 out of 10K participants.",
+      // "AtCoder Beginner Contest 394 : Rank 4842 out of 10K participants.",
     ],
     profileLink: "https://atcoder.jp/users/arup04",
   }
