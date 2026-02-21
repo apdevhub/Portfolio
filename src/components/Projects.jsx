@@ -4,14 +4,20 @@ import { motion } from "framer-motion";
 const Projects = () => {
   return (
     <div id="projects" className="border-b border-neutral-900 pb-20">
-      <motion.h1
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -50 }}
-        transition={{ duration: 1 }}
-        className="my-20 text-center text-4xl font-bold"
-      >
-        Featured Projects
-      </motion.h1>
+      <div className="mt-20 mb-12 flex justify-center">
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -20 }}
+          className="relative text-center group"
+        >
+          <h1 className="text-3xl md:text-4xl font-black tracking-tighter flex items-center justify-center gap-3">
+            <span className="relative inline-block text-white overflow-hidden bg-gradient-to-r from-neutral-500 via-white to-neutral-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
+              Featured Projects
+            </span>
+          </h1>
+          <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-2"></div>
+        </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
         {PROJECTS.slice(0, 3).map((project, index) => (

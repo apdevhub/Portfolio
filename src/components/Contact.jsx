@@ -51,14 +51,20 @@ const Contact = () => {
 
   return (
     <div className="my-20 px-4 max-w-2xl mx-auto">
-      <motion.h2
-        id="contact"
-        animate={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 1, y: 0 }}
-        className="text-4xl text-center mb-10"
-      >
-        Contact <span className="text-neutral-500 font-bold"> Me</span>
-      </motion.h2>
+      <div id="contact" className="mt-20 mb-12 flex justify-center">
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -20 }}
+          className="relative text-center group"
+        >
+          <h1 className="text-3xl md:text-4xl font-black tracking-tighter flex items-center justify-center gap-3">
+            <span className="relative inline-block text-white overflow-hidden bg-gradient-to-r from-neutral-500 via-white to-neutral-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
+              Contact Me
+            </span>
+          </h1>
+          <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-2"></div>
+        </motion.div>
+      </div>
       <form ref={form} onSubmit={sendEmail} className="space-y-4">
         <motion.input
           whileInView={{ opacity: 1, y: 0 }}
