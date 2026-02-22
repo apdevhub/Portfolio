@@ -14,29 +14,22 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="border-b border-neutral-900 pb-20">
+    <div id="projects" className="pb-20">
       <div className="mt-20 mb-12 flex justify-center">
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -20 }}
-          className="relative text-center group"
-        >
+        <div className="relative text-center group">
           <h1 className="text-3xl md:text-4xl font-black tracking-tighter flex items-center justify-center gap-3">
-            <span className="relative inline-block text-white overflow-hidden bg-gradient-to-r from-neutral-500 via-white to-neutral-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
+            <span className="relative inline-block text-white">
               Featured Projects
             </span>
           </h1>
-          <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-2"></div>
-        </motion.div>
+          <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-2"></div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
         {PROJECTS.slice(0, 3).map((project, index) => (
-          <motion.div
+          <div
             key={index}
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
             onClick={() => openModal(project)}
             className="group relative bg-neutral-900/40 rounded-3xl border border-neutral-800 overflow-hidden hover:border-purple-500/50 transition-all flex flex-col h-full cursor-pointer"
           >
@@ -107,15 +100,11 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 50 }}
-        className="mt-16 flex justify-center"
-      >
+      <div className="mt-16 flex justify-center">
         <Link
           to="/projects"
           className="group relative flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm overflow-hidden"
@@ -126,7 +115,7 @@ const Projects = () => {
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </span>
         </Link>
-      </motion.div>
+      </div>
 
       <ProjectModal
         project={selectedProject}

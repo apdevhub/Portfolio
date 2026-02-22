@@ -49,9 +49,6 @@ const HeroVisual = () => {
             }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, delay: 1.2 }}
             className="relative w-72 h-72 md:w-96 md:h-96 group"
         >
             {/* Glow Effect */}
@@ -74,43 +71,23 @@ const HeroVisual = () => {
 
 const Hero = () => {
     return (
-        <div id="home" className="border-b border-neutral-900 pb-16 lg:mb-24">
+        <div id="home" className="pb-16 lg:mb-24">
             <div className="flex flex-wrap items-center">
                 <div className="w-full lg:w-1/2">
                     <div className="flex flex-col items-center lg:items-start">
-                        <motion.h1
-                            variants={container(0)}
-                            initial="hidden"
-                            animate="visible"
-                            className="pb-6 text-5xl font-black tracking-tighter lg:mt-12 lg:text-7xl"
-                        >
-                            <span className="relative inline-block text-white overflow-hidden bg-gradient-to-r from-neutral-500 via-white to-neutral-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
+                        <h1 className="pb-6 text-5xl font-black tracking-tighter lg:mt-12 lg:text-7xl">
+                            <span className="relative inline-block text-white">
                                 Arup Patra
                             </span>
-                        </motion.h1>
-                        <motion.span
-                            variants={container(0.5)}
-                            initial="hidden"
-                            animate="visible"
-                            className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-2xl md:text-3xl tracking-tight text-transparent font-bold"
-                        >
+                        </h1>
+                        <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-2xl md:text-3xl tracking-tight text-transparent font-bold">
                             Full Stack Developer & Competitive Programmer
-                        </motion.span>
-                        <motion.p
-                            variants={container(1)}
-                            initial="hidden"
-                            animate="visible"
-                            className="my-2 max-w-xl py-6 font-light tracking-tighter text-neutral-400 text-lg leading-relaxed text-justify"
-                        >
+                        </span>
+                        <p className="my-2 max-w-xl py-6 font-light tracking-tighter text-neutral-400 text-lg leading-relaxed text-justify">
                             {HERO_CONTENT}
-                        </motion.p>
+                        </p>
 
-                        <motion.div
-                            variants={container(1.2)}
-                            initial="hidden"
-                            animate="visible"
-                            className="flex flex-wrap gap-4 mt-4"
-                        >
+                        <div className="flex flex-wrap gap-4 mt-4">
                             {/* Premium Flip Button - Primary */}
                             <a href="#projects" className="group relative px-8 py-3 flex items-center justify-center rounded-full font-bold overflow-hidden transition-all duration-300">
                                 <span className="absolute inset-0 bg-white group-hover:bg-transparent transition-all"></span>
@@ -123,7 +100,7 @@ const Hero = () => {
                                 <span className="absolute inset-0 bg-transparent group-hover:bg-purple-500 transition-all scale-x-0 group-hover:scale-x-100 origin-left"></span>
                                 <span className="relative text-white group-hover:text-white transition-colors">Contact Me</span>
                             </a>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2 lg:p-12">

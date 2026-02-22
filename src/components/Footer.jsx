@@ -8,8 +8,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-transparent text-white pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 border-t border-neutral-900 pt-16">
+    <footer className="w-full bg-transparent text-white pt-10 pb-10">
+      <div className="max-w-7xl mx-auto px-6 border-t border-neutral-900 pt-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
           {/* Left Side */}
           <div className="space-y-4 text-center md:text-left">

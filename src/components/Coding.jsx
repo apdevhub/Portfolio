@@ -53,9 +53,6 @@ const CodingCard = ({ platform, index }) => {
             }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 30 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
             className="group relative flex flex-col items-center bg-neutral-900/40 p-6 rounded-2xl border border-neutral-800 hover:border-white/20 transition-all overflow-hidden"
         >
             {/* Dynamic Brand Glow */}
@@ -116,23 +113,19 @@ const CodingCard = ({ platform, index }) => {
 
 const Coding = () => {
     return (
-        <div id="coding" className="border-b border-neutral-900 pb-20 overflow-hidden">
-            {/* Animating Shimmer Header */}
+        <div id="coding" className="pb-20 overflow-hidden">
+            {/* Animating Header */}
             <div className="mt-20 mb-12 flex justify-center">
-                <motion.div
-                    whileInView={{ opacity: 1, y: 0 }}
-                    initial={{ opacity: 0, y: -20 }}
-                    className="relative text-center group"
-                >
-                    <h1 className="text-3xl md:text-4xl font-black tracking-tighter text-white/20 flex items-center justify-center gap-4">
+                <div className="relative text-center group">
+                    <h1 className="text-3xl md:text-4xl font-black tracking-tighter flex items-center justify-center gap-4">
                         <span className="text-neutral-700 font-light">{"<"}</span>
-                        <span className="relative inline-block text-white overflow-hidden bg-gradient-to-r from-neutral-500 via-white to-neutral-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
+                        <span className="relative inline-block text-white">
                             Coding Journey
                         </span>
                         <span className="text-neutral-700 font-light">{"/>"}</span>
                     </h1>
-                    <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-2"></div>
-                </motion.div>
+                    <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-2"></div>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto py-2">
@@ -140,7 +133,6 @@ const Coding = () => {
                     <CodingCard key={index} platform={platform} index={index} />
                 ))}
             </div>
-
         </div>
     );
 };

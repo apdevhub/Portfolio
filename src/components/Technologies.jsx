@@ -59,30 +59,25 @@ const Technologies = () => {
     );
 
     return (
-        <div id="technologies" className="border-b border-neutral-900 pb-32 pt-16 relative overflow-hidden">
-            {/* Background Ambient Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none"></div>
-
+        <div id="technologies" className="pb-32 pt-16 relative overflow-hidden">
             <div className="mt-10 mb-16 flex justify-center">
-                <motion.div
-                    whileInView={{ opacity: 1, y: 0 }}
-                    initial={{ opacity: 0, y: -20 }}
-                    className="relative text-center group"
-                >
+                <div className="relative text-center group">
                     <h1 className="text-3xl md:text-4xl font-black tracking-tighter flex items-center justify-center gap-3">
-                        <span className="relative inline-block text-white overflow-hidden bg-gradient-to-r from-neutral-500 via-white to-neutral-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
+                        <span className="relative inline-block text-white">
                             Technical Stack
                         </span>
                     </h1>
-                    <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-2"></div>
-                </motion.div>
+                    <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mt-2"></div>
+                </div>
             </div>
 
-            <div className="max-w-7xl mx-auto space-y-8 relative">
-                {/* Edge Fading Masks */}
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
-
+            <div
+                className="max-w-7xl mx-auto space-y-8 relative"
+                style={{
+                    WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                    maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+                }}
+            >
                 {/* Row 1: Left to Right */}
                 <MarqueeRow items={techsRow1} direction="left" speed={30} />
 
@@ -90,14 +85,9 @@ const Technologies = () => {
                 <MarqueeRow items={techsRow2} direction="right" speed={35} />
             </div>
 
-            <motion.p
-                whileInView={{ opacity: 1 }}
-                initial={{ opacity: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-center mt-16 text-neutral-500 text-sm font-medium tracking-widest uppercase"
-            >
+            <p className="text-center mt-16 text-neutral-500 text-sm font-medium tracking-widest uppercase">
                 Constantly learning and expanding my toolkit
-            </motion.p>
+            </p>
         </div>
     );
 };

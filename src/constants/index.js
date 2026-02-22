@@ -21,9 +21,18 @@ export const ABOUT_CONTENT = `I am a Full Stack Developer and Competitive Progra
 
 export const EXPERIENCES = [
   {
-    year: "Jan 2026 - Present",
+    year: "Mar 2026 - Present",
+    role: "SDE I",
+    company: "HashedIn by Deloitte",
+    logo: null, // Import and add company logo here
+    description: `Working on a full-stack video streaming application using Node.js, Express.js, and MongoDB. Implemented video upload, storage, and playback features using Multer, GridFS, and video streaming APIs. Built an intuitive user interface with React.js and Tailwind CSS. Enabled secure user authentication with JWT and managed protected routes. Focused on optimizing video delivery, handling large files efficiently, and ensuring smooth playback.`,
+    technologies: ["Javascript", "React.js", "Express.js", "MongoDB", "GridFS", "Tailwind"],
+  },
+  {
+    year: "Jan 2026 - Mar 2026",
     role: "SDE Intern",
     company: "HashedIn by Deloitte",
+    logo: null, // Import and add company logo here
     description: `Working on a full-stack video streaming application using Node.js, Express.js, and MongoDB. Implemented video upload, storage, and playback features using Multer, GridFS, and video streaming APIs. Built an intuitive user interface with React.js and Tailwind CSS. Enabled secure user authentication with JWT and managed protected routes. Focused on optimizing video delivery, handling large files efficiently, and ensuring smooth playback.`,
     technologies: ["Javascript", "React.js", "Express.js", "MongoDB", "GridFS", "Tailwind"],
   }

@@ -6,6 +6,11 @@ const Logo = () => {
             className="relative flex items-center justify-center w-12 h-12 group cursor-pointer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            drag
+            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+            dragElastic={0.6}
+            whileDrag={{ scale: 1.2, zIndex: 100 }}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
         >
             {/* Outer Rotating Hexagon/Frame */}
             <motion.div
