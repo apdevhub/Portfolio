@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import Logo from "./Logo";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -16,10 +16,10 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-800 bg-neutral-950/50 backdrop-blur-md">
-      <div className="container mx-auto flex items-center justify-between py-4 px-8">
+      <div className="container mx-auto flex items-center justify-between py-2 px-8">
         <div className="flex flex-shrink-0 items-center">
           <a href="#home">
-            <img className="h-8 w-auto" src={logo} alt="Logo" />
+            <Logo />
           </a>
         </div>
 

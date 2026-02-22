@@ -74,7 +74,7 @@ const HeroVisual = () => {
 
 const Hero = () => {
     return (
-        <div id="home" className="border-b border-neutral-900 pb-16 lg:mb-35">
+        <div id="home" className="border-b border-neutral-900 pb-16 lg:mb-24">
             <div className="flex flex-wrap items-center">
                 <div className="w-full lg:w-1/2">
                     <div className="flex flex-col items-center lg:items-start">
@@ -82,7 +82,7 @@ const Hero = () => {
                             variants={container(0)}
                             initial="hidden"
                             animate="visible"
-                            className="pb-6 text-6xl font-black tracking-tighter lg:mt-16 lg:text-8xl"
+                            className="pb-6 text-5xl font-black tracking-tighter lg:mt-12 lg:text-7xl"
                         >
                             <span className="relative inline-block text-white overflow-hidden bg-gradient-to-r from-neutral-500 via-white to-neutral-500 bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
                                 Arup Patra
@@ -92,7 +92,7 @@ const Hero = () => {
                             variants={container(0.5)}
                             initial="hidden"
                             animate="visible"
-                            className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-3xl md:text-4xl tracking-tight text-transparent font-bold"
+                            className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-2xl md:text-3xl tracking-tight text-transparent font-bold"
                         >
                             Full Stack Developer & Competitive Programmer
                         </motion.span>

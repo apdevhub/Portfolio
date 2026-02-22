@@ -1,7 +1,18 @@
+import { useState } from "react";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import ProjectModal from "./ProjectModal";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
   return (
     <div id="projects" className="border-b border-neutral-900 pb-20">
       <div className="mt-20 mb-12 flex justify-center">
@@ -19,14 +30,15 @@ const Projects = () => {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
         {PROJECTS.slice(0, 3).map((project, index) => (
           <motion.div
             key={index}
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className="group relative bg-neutral-900/40 rounded-3xl border border-neutral-800 overflow-hidden hover:border-purple-500/50 transition-all flex flex-col h-full"
+            onClick={() => openModal(project)}
+            className="group relative bg-neutral-900/40 rounded-3xl border border-neutral-800 overflow-hidden hover:border-purple-500/50 transition-all flex flex-col h-full cursor-pointer"
           >
             {/* Project Image Container with Glass Glow Border */}
             <div className="relative aspect-video overflow-hidden border-b border-neutral-800 ring-1 ring-white/10 shadow-2xl shadow-purple-500/5">
@@ -35,12 +47,17 @@ const Projects = () => {
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-neutral-950/40 group-hover:bg-transparent transition-colors duration-300"></div>
+              {/* View Details Overlay */}
+              <div className="absolute inset-0 bg-neutral-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="px-6 py-2 bg-white text-black font-black text-xs uppercase tracking-widest rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  View Details
+                </span>
+              </div>
             </div>
 
             {/* Content Container */}
-            <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+            <div className="p-5 flex flex-col flex-grow">
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
                 {project.title}
               </h3>
 
@@ -69,6 +86,7 @@ const Projects = () => {
                       href={project.previewLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="group relative flex-1 py-2 flex items-center justify-center rounded-lg font-bold text-sm overflow-hidden"
                     >
                       <span className="absolute inset-0 bg-purple-600 group-hover:bg-transparent transition-all"></span>
@@ -80,6 +98,7 @@ const Projects = () => {
                     href={project.sourceCodeLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="group relative flex-1 py-2 flex items-center justify-center rounded-lg font-bold text-sm overflow-hidden border border-neutral-700"
                   >
                     <span className="absolute inset-0 bg-transparent group-hover:bg-white transition-all scale-x-0 group-hover:scale-x-100 origin-left"></span>
@@ -97,10 +116,8 @@ const Projects = () => {
         initial={{ opacity: 0, y: 50 }}
         className="mt-16 flex justify-center"
       >
-        <a
-          href="https://github.com/aruppatra04"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/projects"
           className="group relative flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm overflow-hidden"
         >
           <span className="absolute inset-0 border-2 border-purple-500 rounded-full group-hover:bg-purple-500 transition-all duration-300"></span>
@@ -108,8 +125,14 @@ const Projects = () => {
             Explore More Projects
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </span>
-        </a>
+        </Link>
       </motion.div>
+
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

@@ -16,9 +16,7 @@ import ac from "../assets/coding/ac.png"
 
 export const HERO_CONTENT = `I specialize in building dynamic web applications using React, Node.js, Express, MongoDB, and MySQL. With a strong foundation in Java, I actively solve algorithmic problems on platforms like LeetCode, constantly sharpening my problem-solving skills. Whether it's backend architecture or crafting responsive UIs, I bring a balanced approach to software development with a passion for clean, efficient code.`;
 
-export const ABOUT_TEXT1 = `I am a passionate competitive programmer with a solid grasp of algorithms, data structures, and problem-solving strategies. I regularly practice on platforms like LeetCode, where I’ve tackled hundreds of problems ranging from dynamic programming to graph theory. My commitment to coding excellence has helped me develop the speed, accuracy, and logical thinking essential for tackling real-world technical challenges.`
-
-export const ABOUT_TEXT2 = `On the development side, I’m a full-stack web developer skilled in building scalable, end-to-end applications using technologies like React, Node.js, Express, MongoDB, and MySQL. I focus on writing clean, maintainable code, and designing user-friendly interfaces. Whether I’m working on backend APIs, authentication systems, or interactive UIs, I strive to bridge performance with great user experience.`;
+export const ABOUT_CONTENT = `I am a Full Stack Developer and Competitive Programmer who thrives at the intersection of logical problem-solving and creative building. With a deep foundation in Data Structures and Algorithms, I approach every challenge with efficiency and scalability in mind. My expertise spans the MERN stack, where I transform complex requirements into seamless, high-performance web experiences. I am committed to writing cleaner code and building smoother interfaces for every user I serve.`;
 
 
 export const EXPERIENCES = [
