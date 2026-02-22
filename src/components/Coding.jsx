@@ -103,10 +103,12 @@ const CodingCard = ({ platform, index }) => {
                 href={platform.profileLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-full py-2.5 text-center rounded-lg bg-neutral-800 text-white font-bold text-[11px] tracking-widest uppercase border border-neutral-700 hover:bg-gradient-to-r ${brandColor} hover:border-transparent transition-all duration-300 shadow-xl`}
+                className="group relative w-full py-2.5 flex items-center justify-center rounded-lg font-bold text-[11px] tracking-widest uppercase overflow-hidden transition-all duration-300 shadow-xl"
                 style={{ transform: "translateZ(40px)" }}
             >
-                View Profile
+                <span className="absolute inset-0 bg-neutral-800 group-hover:bg-transparent transition-all"></span>
+                <span className={`absolute inset-0 bg-gradient-to-r ${brandColor} scale-x-0 group-hover:scale-x-100 rounded-lg transition-transform duration-300 origin-left`}></span>
+                <span className="relative z-10 text-white">View Profile</span>
             </a>
         </motion.div>
     );

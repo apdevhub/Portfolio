@@ -112,14 +112,14 @@ const Hero = () => {
                             className="flex flex-wrap gap-4 mt-4"
                         >
                             {/* Premium Flip Button - Primary */}
-                            <a href="#projects" className="group relative px-8 py-3 rounded-full font-bold overflow-hidden transition-all duration-300">
+                            <a href="#projects" className="group relative px-8 py-3 flex items-center justify-center rounded-full font-bold overflow-hidden transition-all duration-300">
                                 <span className="absolute inset-0 bg-white group-hover:bg-transparent transition-all"></span>
                                 <span className="absolute inset-0 border-2 border-white scale-0 group-hover:scale-100 rounded-full transition-transform duration-300"></span>
                                 <span className="relative text-black group-hover:text-white transition-colors">View My Work</span>
                             </a>
 
                             {/* Premium Flip Button - Secondary */}
-                            <a href="#contact" className="group relative px-8 py-3 rounded-full font-bold overflow-hidden transition-all duration-300 border-2 border-neutral-700 hover:border-purple-500">
+                            <a href="#contact" className="group relative px-8 py-3 flex items-center justify-center rounded-full font-bold overflow-hidden transition-all duration-300 border-2 border-neutral-700 hover:border-purple-500">
                                 <span className="absolute inset-0 bg-transparent group-hover:bg-purple-500 transition-all scale-x-0 group-hover:scale-x-100 origin-left"></span>
                                 <span className="relative text-white group-hover:text-white transition-colors">Contact Me</span>
                             </a>

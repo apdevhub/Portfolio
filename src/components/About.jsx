@@ -29,7 +29,7 @@ const About = () => {
                     className="w-full lg:w-1/2 lg:p-12 mb-10 lg:mb-0"
                 >
                     <div className="flex items-center justify-center">
-                        <div className="relative p-2 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-3xl">
+                        <div className="relative p-2 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-3xl ring-1 ring-white/10 shadow-2xl shadow-purple-500/10">
                             <div className="bg-neutral-950 rounded-[1.4rem] p-8">
                                 <p className="text-lg leading-relaxed text-neutral-300 text-justify">
                                     {ABOUT_TEXT1}
@@ -46,7 +46,7 @@ const About = () => {
                     className="w-full lg:w-1/2 lg:p-12"
                 >
                     <div className="flex items-center justify-center">
-                        <div className="bg-neutral-900/50 p-8 rounded-3xl border border-neutral-800 backdrop-blur-sm">
+                        <div className="bg-neutral-900/50 p-8 rounded-3xl border border-neutral-800 backdrop-blur-sm ring-1 ring-white/10 shadow-2xl shadow-cyan-500/5">
                             <p className="text-lg leading-relaxed text-neutral-400 text-justify">
                                 {ABOUT_TEXT2}
                             </p>

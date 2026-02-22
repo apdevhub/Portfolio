@@ -28,8 +28,8 @@ const Projects = () => {
             transition={{ duration: 0.8, delay: index * 0.1 }}
             className="group relative bg-neutral-900/40 rounded-3xl border border-neutral-800 overflow-hidden hover:border-purple-500/50 transition-all flex flex-col h-full"
           >
-            {/* Project Image Container with Fixed Aspect Ratio */}
-            <div className="relative aspect-video overflow-hidden border-b border-neutral-800">
+            {/* Project Image Container with Glass Glow Border */}
+            <div className="relative aspect-video overflow-hidden border-b border-neutral-800 ring-1 ring-white/10 shadow-2xl shadow-purple-500/5">
               <img
                 src={project.image}
                 alt={project.title}
@@ -69,7 +69,7 @@ const Projects = () => {
                       href={project.previewLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative flex-1 text-center py-2 rounded-lg font-bold text-sm overflow-hidden"
+                      className="group relative flex-1 py-2 flex items-center justify-center rounded-lg font-bold text-sm overflow-hidden"
                     >
                       <span className="absolute inset-0 bg-purple-600 group-hover:bg-transparent transition-all"></span>
                       <span className="absolute inset-0 border border-purple-600 scale-0 group-hover:scale-100 rounded-lg transition-transform duration-300"></span>
@@ -80,7 +80,7 @@ const Projects = () => {
                     href={project.sourceCodeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex-1 text-center py-2 rounded-lg font-bold text-sm overflow-hidden border border-neutral-700"
+                    className="group relative flex-1 py-2 flex items-center justify-center rounded-lg font-bold text-sm overflow-hidden border border-neutral-700"
                   >
                     <span className="absolute inset-0 bg-transparent group-hover:bg-white transition-all scale-x-0 group-hover:scale-x-100 origin-left"></span>
                     <span className="relative text-white group-hover:text-black transition-colors">Code</span>

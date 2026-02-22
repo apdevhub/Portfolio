@@ -102,9 +102,11 @@ const Contact = () => {
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.4 }}
           type="submit"
-          className="bg-purple-800 text-white px-6 py-2 rounded hover:bg-purple-700"
+          className="group relative w-full py-3 flex items-center justify-center rounded-lg font-bold text-white overflow-hidden transition-all duration-300"
         >
-          Send
+          <span className="absolute inset-0 bg-purple-800 group-hover:bg-transparent transition-all"></span>
+          <span className="absolute inset-0 border-2 border-purple-800 scale-x-0 group-hover:scale-x-100 rounded-lg transition-transform duration-300 origin-left"></span>
+          <span className="relative z-10">Send Message</span>
         </motion.button>
         {isSent && <p className="text-green-500">Message sent successfully!</p>}
         {error && <p className="text-red-500">Failed to send message.</p>}
